@@ -1,17 +1,23 @@
-import blog from "./components/blog.jsx";
+import React from "react";
 import Header from "./components/Header";
-import PostList from "./components/PostList";
-import Post from "./components/Post";
-import "./App.css";
+import About from "./components/About";
+import ArticleList from "./components/ArticleList";
+import blog from "./data/Blog"; 
+
 
 function App() {
   return (
-    <div className="app-wrapper">
-      <Header name={blog.name} />
-      
-      <main className="content-area">
-        <PostList posts={blog.posts} />
-      </main>
+    <div className="min-h-screen bg-gray-50 text-gray-800">
+      <div className="max-w-3xl mx-auto px-4 py-10 space-y-10">
+        <Header name="My Personal Blog" />
+
+        <About
+          image="https://picsum.photos/200"
+          about="Welcome to my blog where I share React learning notes and projects."
+        />
+
+        <ArticleList posts={blog} />
+      </div>
     </div>
   );
 }
